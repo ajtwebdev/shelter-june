@@ -71,21 +71,21 @@ export async function getStaticProps({
   // we can first contruct our URI from the page params
 
   let pageUri = `/${slugParent}/`;
+  let blogSlug = ""
 
   // We only want to apply deeper paths to the URI if we actually have
   // existing children
 
   if (Array.isArray(slugChild) && slugChild.length > 0) {
     pageUri = `${pageUri}${slugChild.join("/")}/`;
+    blogSlug = slugChild[0]
   }
 
   const { page } = await getPageByUri(pageUri);
-
   if (!page) {
     const allPosts = await getAllPostsWithSlug();
-
     const isBlog = allPosts.edges.find(
-      ({ node }) => node.slug === slugChild[0]
+      ({ node }) => node.slug === blogSlug
     );
     if (!isBlog) {
       return {
@@ -95,11 +95,10 @@ export async function getStaticProps({
     }
 
     const data = await getPostAndMorePosts(
-      params?.slugChild[0],
+      blogSlug,
       preview,
       previewData
     );
-
     return {
       props: {
         preview,

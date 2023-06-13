@@ -1,5 +1,4 @@
-const API_URL = process.env.WORDPRESS_API_URL;
-
+const API_URL = process.env.WORDPRESS_API_URL || "http://www.content.shelterinplace3.ca/graphql";
 async function fetchAPI(query = "", { variables }: Record<string, any> = {}) {
   const headers = { "Content-Type": "application/json" };
 
@@ -218,3 +217,63 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
 
   return data;
 }
+
+export async function getAllPostsData() {
+  const data = await fetchAPI(`
+  fragment PostFields on Post {
+    id
+    categories {
+      edges {
+        node {
+          databaseId
+          id
+          name
+          slug
+        }
+      }
+    }
+    databaseId
+    date
+    isSticky
+    postId
+    slug
+    title
+  }
+  query AllPosts {
+    posts(first: 10000, where: { hasPassword: false }) {
+      edges {
+        node {
+         ...PostFields
+          author {
+            node {
+              avatar {
+                height
+                url
+                width
+              }
+              id
+              name
+              slug
+            }
+          }
+          content
+          excerpt
+          featuredImage {
+            node {
+              altText
+              caption
+              sourceUrl
+              srcSet
+              sizes
+              id
+            }
+          }
+          modified
+        }
+      }
+    }
+  }
+  `);
+  return data?.posts;
+}
+
