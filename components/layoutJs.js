@@ -7,7 +7,7 @@ import GoogleBadge from "./googleBadge";
 import HeaderBasic from "./headers/header";
 import Seo from "./seo";
 import Proverb from "./proverb";
-import RecentPostsData from "./recent-posts/index"
+import RecentPostsData from "./recent-posts/index";
 
 const Wrapper = styled.div`
   position: relative;
@@ -19,8 +19,8 @@ export default function LayoutJs({ children }) {
       <Seo title="Shelter in Place" />
       <HeaderBasic />
       <main>{children}</main>
+      <RecentPostsData />
       <Proverb />
-      <RecentPostsData/>
       <Footer />
     </Wrapper>
   );

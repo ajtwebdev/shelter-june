@@ -6,6 +6,9 @@ import styled from "styled-components";
 import Seo from "../../components/seo";
 import LayoutJs from "../../components/layoutJs";
 import Link from "next/link";
+import HeaderBasic from "../../components/headers/header";
+import Proverb from "../../components/proverb";
+import Footer from "../../components/footers/footer";
 
 const BannerWrapper = styled.div`
   grid-row: 1 / span 2;
@@ -22,11 +25,11 @@ const BannerWrapper = styled.div`
   display: grid;
   place-items: center;
 
-  min-height: 80vh;
+  min-height: 40vh;
   height: 100%;
 
   @media screen and (max-width: 26em) {
-    min-height: 100vh;
+    min-height: 40vh;
     height: 100%;
   }
 `;
@@ -77,16 +80,17 @@ const PostContainer = styled(Container)`
 
 const CategoryPage = ({catgoryPost}) =>{
     return (
-        <LayoutJs>
+        <div>
           <Seo
-            title={`Shelter in ${catgoryPost?.categoryName}`}
+            title={`${catgoryPost?.categoryName}`}
             description="Welcome to the Shelter in Place blog by Brian Pickup."
           />
+          <HeaderBasic />
           <BannerWrapper>
             <Container className="spacing">
               <BannerText className="spacing">
                 <div>
-                  <h1 className="title">Shelter in `{catgoryPost?.categoryName}`</h1>
+                  <h1 className="title">{catgoryPost?.categoryName}</h1>
                 </div>
               </BannerText>
             </Container>
@@ -124,7 +128,9 @@ const CategoryPage = ({catgoryPost}) =>{
       </CategoryContainer>
         </PostContainer>
       </Section>
-        </LayoutJs>
+      <Proverb />
+      <Footer />
+        </div>
         )
 }
 

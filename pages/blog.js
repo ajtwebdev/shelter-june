@@ -96,7 +96,7 @@ const BannerWrapper = styled.div`
   height: 100%;
 
   @media screen and (max-width: 26em) {
-    min-height: 100vh;
+    min-height: 80vh;
     height: 100%;
   }
 `;
