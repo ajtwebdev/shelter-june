@@ -7,6 +7,7 @@ import GoogleBadge from "./googleBadge";
 import HeaderBasic from "./headers/header";
 import Seo from "./seo";
 import Proverb from "./proverb";
+import RecentPostsData from "./recent-posts/index"
 
 const Wrapper = styled.div`
   position: relative;
@@ -19,6 +20,7 @@ export default function LayoutJs({ children }) {
       <HeaderBasic />
       <main>{children}</main>
       <Proverb />
+      <RecentPostsData/>
       <Footer />
     </Wrapper>
   );
