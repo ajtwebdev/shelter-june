@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Container, Actions } from "./layoutComponents";
 import { ButtonPrimary, AnchorInline } from "./buttons";
+import { getProverbData } from "../lib/api";
 
 const Wrapper = styled.div`
   grid-row: 1 / span 2;
@@ -36,14 +37,22 @@ const Text = styled.div`
   border-radius: 10px;
 `;
 export default function Proverb() {
+  const [proverbData, setProverbData] = useState({});
+  useEffect(()=>{
+    async function getProverb (){
+      const data = await getProverbData();
+      setProverbData(data?.generalSettings)
+    }
+    getProverb()
+  },[])
+  
   return (
-    <Wrapper img="http://www.wp-content.shelterinplace3.ca/wp-content/uploads/2023/03/IMGP2374-scaled-1.jpg">
+    <Wrapper img={proverbData?.proverbImg}>
       <Container className="spacing">
         <Text className="spacing">
           <div className="">
             <h3 className="subheader italics">
-              "Nor is there salvation in any other, for there is no other name
-              under heaven given among men by which we must be saved. Acts 4:12"
+              {proverbData?.proverb}
             </h3>
           </div>
         </Text>

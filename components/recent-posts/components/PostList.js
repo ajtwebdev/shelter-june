@@ -51,51 +51,44 @@ const PostList = ({ posts }) => {
     <Section>
       <PostHeading>Recent Posts</PostHeading>
       <PostContainer>
-        {posts &&
-          Object.keys(posts).length > 0 &&
-          Object.keys(posts).map((cat_id, index) => {
-            const catgoryPost = posts[cat_id] || {};
-            return (
-              <CategoryContainer key={index}>
-                <h2>{catgoryPost?.categoryName}</h2>
-                <CategoryPostContainer>
-                  {catgoryPost?.posts?.slice(0, 6)?.map((post, index) => {
-                    const categorySlug =
-                      post?.categories?.edges?.length > 0
-                        ? post?.categories?.edges[0]?.node?.slug
-                        : post?.categories[0]?.slug;
+        {(posts && Object.keys(posts).length > 0) ? Object.keys(posts).map((cat_id, index) => {
+          const catgoryPost = posts[cat_id] || {};
+          return (
+            <CategoryContainer key={index}>
+              <h2>{catgoryPost?.categoryName}</h2>
+              <CategoryPostContainer>
+              {catgoryPost?.posts?.slice(0,6)?.map((post, index) => {
+                const categorySlug =
+                  post?.categories?.edges?.length > 0
+                    ? post?.categories?.edges[0]?.node?.slug
+                    :  post?.categories[0]?.slug;
 
-                    return (
-                      <StyledCard key={index}>
-                        <Link
-                          className="spacing accent"
-                          href={postPathBySlugCategory(post.slug, categorySlug)}
-                        >
-                          <img
-                            src={
-                              post?.featuredImage?.sourceUrl ||
-                              post?.featuredImage?.node?.sourceUrl
-                            }
-                            alt="Avatar"
-                          ></img>
-                          <StyledCardContainer>
-                            <h4>
-                              <b> {post?.title}</b>
-                            </h4>
-                            <Excerpt
-                              dangerouslySetInnerHTML={{
-                                __html: post?.excerpt,
-                              }}
-                            />
-                          </StyledCardContainer>
-                        </Link>
-                      </StyledCard>
-                    );
-                  })}
-                </CategoryPostContainer>
-              </CategoryContainer>
-            );
-          })}
+                return (
+                  <StyledCard key={index}>
+                  <Link
+                  className="spacing accent"
+                  href={postPathBySlugCategory(
+                    post.slug,
+                    categorySlug
+                  )}
+                >
+                    <img src={post?.featuredImage?.sourceUrl || post?.featuredImage?.node?.sourceUrl} alt="Avatar"></img>
+                    <StyledCardContainer>
+                      <h4><b> {post?.title}</b></h4> 
+                      <Excerpt
+                        dangerouslySetInnerHTML={{ __html: post?.excerpt }}
+                      />
+                    </StyledCardContainer>
+                    </Link>
+                  </StyledCard>
+                 
+                );
+              })}
+              </CategoryPostContainer>
+            </CategoryContainer>
+          );
+        }): <h2>No Recent Post Found!</h2>}
+ 
       </PostContainer>
     </Section>
   );

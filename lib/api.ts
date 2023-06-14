@@ -1,4 +1,5 @@
-const API_URL = process.env.WORDPRESS_API_URL;
+
+const API_URL = process.env.WORDPRESS_API_URL || "https://www.content.shelterinplace3.ca/graphql";
 async function fetchAPI(query = "", { variables }: Record<string, any> = {}) {
   const headers = { "Content-Type": "application/json" };
 
@@ -277,3 +278,13 @@ export async function getAllPostsData() {
   return data?.posts;
 }
 
+export async function getProverbData() {
+  return await fetchAPI(`
+  query ProverbQuery{
+    generalSettings{
+        proverb
+      proverbImg
+    }
+}   
+  `)
+}
