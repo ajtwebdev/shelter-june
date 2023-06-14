@@ -277,3 +277,13 @@ export async function getAllPostsData() {
   return data?.posts;
 }
 
+export async function getProverbData() {
+  return await fetchAPI(`
+  query ProverbQuery{
+    generalSettings{
+        proverb
+      proverbImg
+    }
+}   
+  `)
+}
