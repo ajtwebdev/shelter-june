@@ -59,7 +59,7 @@ const PostList = ({ posts }) => {
               <CategoryContainer key={index}>
                 <h2>{catgoryPost?.categoryName}</h2>
                 <CategoryPostContainer>
-                  {catgoryPost?.posts?.slice(0, 3)?.map((post, index) => {
+                  {catgoryPost?.posts?.slice(0, 6)?.map((post, index) => {
                     const categorySlug =
                       post?.categories?.edges?.length > 0
                         ? post?.categories?.edges[0]?.node?.slug
