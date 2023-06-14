@@ -319,9 +319,22 @@ export default function HeaderBasic() {
               <li>
                 <StyledLink href="/gallery">gallery</StyledLink>
               </li>
-              <li>
-                <StyledLink href="/blog">blog</StyledLink>
-              </li>
+              <Dropdown>
+                <StyledLink href="/blog">
+                  blog <IoMdArrowDropdown size={20} />
+                </StyledLink>
+                <ul>
+                  <li>
+                    <StyledLink href="/blog/signs-of-the-times">
+                      signs of the times
+                    </StyledLink>
+                  </li>
+                  <li>
+                    <StyledLink href="/blog/the-word">the word</StyledLink>
+                  </li>
+                </ul>
+              </Dropdown>
+
               <li>
                 <StyledLink href="/contact">contact</StyledLink>
               </li>
