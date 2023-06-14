@@ -52,7 +52,7 @@ const PostList = ({posts}) =>{
     return <Section>
        <PostHeading>Recent Posts</PostHeading>
       <PostContainer>
-        {posts && Object.keys(posts).length > 0 && Object.keys(posts).map((cat_id, index) => {
+        {(posts && Object.keys(posts).length > 0) ? Object.keys(posts).map((cat_id, index) => {
           const catgoryPost = posts[cat_id] || {};
           return (
             <CategoryContainer key={index}>
@@ -63,7 +63,7 @@ const PostList = ({posts}) =>{
                   post?.categories?.edges?.length > 0
                     ? post?.categories?.edges[0]?.node?.slug
                     :  post?.categories[0]?.slug;
-                    
+
                 return (
                   <StyledCard key={index}>
                   <Link
@@ -88,7 +88,7 @@ const PostList = ({posts}) =>{
               </CategoryPostContainer>
             </CategoryContainer>
           );
-        })}
+        }): <h2>No Recent Post Found!</h2>}
       </PostContainer>
     </Section>
 }
