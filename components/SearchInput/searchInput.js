@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { AiOutlineSearch } from 'react-icons/ai';
 import debounce from 'lodash/debounce';
@@ -10,6 +10,7 @@ import { postPathBySlugCategory } from "../../lib/posts";
 
 export default function SearchBox(props) {
     const [searchField, setSearchField] = useState([])
+    const searchBoxRef = useRef(null);
     const [inputField, setInputField] = useState('')
 
 
@@ -24,8 +25,20 @@ export default function SearchBox(props) {
         setInputField(inputValue)
         debouncedHandleSearch(inputValue);
     }
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (searchBoxRef.current && !searchBoxRef.current.contains(event.target) && inputField.length === 0) {
+                setSearchField([]);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [inputField]);
     return (
-        <div className="searchbox" style={{ width: props.width || "100%" }}>
+        <div className="searchbox" style={{ width: props.width || "100%" }} ref={searchBoxRef}>
             <div style={{ background: "white", border: "1px solid white", borderRadius: "10px", display: "flex", alignItems: "center", padding: "0px 5px", height: "35px" }}>
                 <Input placeholder='Search...' borderRadius="10px" border="none" variant='flushed' w="100%" h="100%" value={inputField} style={{ outline: "none" }} onChange={((e) => handleSearchInput(e))} />
                 <AiOutlineSearch />
