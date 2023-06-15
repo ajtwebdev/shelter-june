@@ -16,7 +16,10 @@ const Wrapper = styled.div`
 export default function LayoutJs({ children }) {
   return (
     <Wrapper>
-      <Seo title="Shelter in Place" />
+      <Seo
+        title="Shelter in Place"
+        description="This Site Is Meant To Encourage Believers In God’s Word, And To Persuade Seekers Of The Truth To Explore The Pages Of The Word."
+      />
       <HeaderBasic />
       <main>{children}</main>
       <RecentPostsData />

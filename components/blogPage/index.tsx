@@ -164,7 +164,7 @@ export default function PostPage({ post, posts, preview }) {
   }
 
   useEffect(() => {
-    commentBox("5734406165626880-proj")
+    commentBox("5661567546818560-proj")
   }, [])
 
   return (
