@@ -6,6 +6,7 @@ import { FaPhone, FaRegClock } from "react-icons/fa";
 import { MdLocationOn, MdOutlineEmail } from "react-icons/md";
 import FormFooter from "../Forms/FormFooter";
 import Image from "next/image";
+import SearchBox from "../SearchInput/searchInput";
 
 const device = {
   md: "48em",
@@ -208,7 +209,7 @@ export default function Footer() {
           <Flex>
             <div className="spacing">
               <LogoContainer>
-                <Link className="title" href="/">
+                <Link className="title" href="/" style={{ marginBottom: "10px" }}>
                   shelter in place
                   {/* <h2 className="title">shelter in place</h2>
                   <p className="body--small">
@@ -216,6 +217,7 @@ export default function Footer() {
                     into it and safe - Proverbs 18:10
                   </p> */}
                 </Link>
+                <SearchBox width="100%" />
               </LogoContainer>
             </div>
             <Divider />

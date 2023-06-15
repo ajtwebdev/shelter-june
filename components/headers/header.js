@@ -5,16 +5,9 @@ import { Container, Flex } from "../layoutComponents";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { FaPhone } from "react-icons/fa";
 import { MdLocationOn, MdOutlineEmail } from "react-icons/md";
-import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
-} from "@chakra-ui/react";
+// import searchInput from "../SearchInput/searchInput";
+import SearchBox from "../SearchInput/searchInput";
+
 
 const device = {
   sm: "18em",
@@ -231,14 +224,14 @@ const Burger = styled.div`
 
     :nth-child(1) {
       transform: ${({ nav }) =>
-        nav ? "rotate(-45deg) translate(-6px, 5px)" : ""};
+    nav ? "rotate(-45deg) translate(-6px, 5px)" : ""};
     }
     :nth-child(2) {
       opacity: ${({ nav }) => (nav ? "0" : "")};
     }
     :nth-child(3) {
       transform: ${({ nav }) =>
-        nav ? "rotate(45deg) translate(-6px, -5px)" : ""};
+    nav ? "rotate(45deg) translate(-6px, -5px)" : ""};
     }
   }
 
@@ -252,7 +245,6 @@ const Burger = styled.div`
 export default function HeaderBasic() {
   const [nav, navOpen] = useState(false);
   const [dropdown, dropdownOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(true);
 
   function toggleMenu() {
     navOpen(!nav);
@@ -284,6 +276,7 @@ export default function HeaderBasic() {
               </NavLinkTop>
             </li>
           </ul>
+          <SearchBox width="30%" />
           <GetQuote href="/become-a-christian">become a christian</GetQuote>
         </Container>
       </Headertop>
