@@ -15,7 +15,6 @@ export default function SearchBox(props) {
 
 
     const debouncedHandleSearch = debounce(async (searchValue) => {
-        console.log("searchval", searchValue)
         const data = await getSearchInputData(searchValue);
         setSearchField(data?.posts?.nodes)
     }, 300);
