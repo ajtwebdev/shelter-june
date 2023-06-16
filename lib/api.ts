@@ -288,3 +288,32 @@ export async function getProverbData() {
 }   
   `)
 }
+
+export async function getSearchInputData(searchVal){
+return await fetchAPI(`
+query SearchQuery {
+  posts(where: {search: "${searchVal}"}) {
+    nodes {
+      title
+       featuredImage {
+            node {
+              altText
+              sourceUrl
+            }
+          }
+      slug
+      categories {
+      edges {
+        node {
+          id
+          name
+          slug
+        }
+      }
+    }
+
+    }
+  }
+}
+`)
+} 
