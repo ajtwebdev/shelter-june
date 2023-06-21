@@ -50,7 +50,7 @@ export default function FormFooter(props) {
             type="tel"
             name="phone"
             id="phone"
-            placeholder="Enter your phone number"
+            placeholder="Enter your phone number (optional)"
           />
         </div>
 
@@ -72,7 +72,7 @@ export default function FormFooter(props) {
             id="msg"
             cols="30"
             rows="5"
-            placeholder="What's your project?"
+            placeholder="How can we help?"
             required
           />
         </div>
