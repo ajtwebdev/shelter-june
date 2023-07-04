@@ -30,6 +30,10 @@ const Text = styled.div`
   color: var(--txt-light);
   max-width: 90ch;
   width: 100%;
+
+  p {
+    font-size: var(--fs-2);
+  }
 `;
 
 export default function Hero({ title, description, image }) {
@@ -38,7 +42,7 @@ export default function Hero({ title, description, image }) {
       <Container>
         <Text className="spacing">
           <h1 className="title">{title}</h1>
-          <p className="subheader">{description}</p>
+          <p className="bold">{description}</p>
           <ButtonPrimary href="/contact">contact us</ButtonPrimary>
         </Text>
       </Container>

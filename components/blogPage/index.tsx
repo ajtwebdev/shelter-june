@@ -143,6 +143,19 @@ const BlogWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
 
+  div {
+    figure {
+      margin-block-start: 0;
+      margin-block-end: 0;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+    }
+    img {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
   h1,
   h2,
   h3. h4,
