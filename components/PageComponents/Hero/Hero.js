@@ -42,7 +42,12 @@ export default function Hero({ title, description, image }) {
       <Container>
         <Text className="spacing">
           <h1 className="title">{title}</h1>
-          <p className="bold">{description}</p>
+          <div
+            className="bold"
+            dangerouslySetInnerHTML={{
+              __html: `${description}`,
+            }}
+          ></div>
           <ButtonPrimary href="/contact">contact us</ButtonPrimary>
         </Text>
       </Container>

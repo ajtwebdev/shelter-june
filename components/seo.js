@@ -1,13 +1,13 @@
 import Head from "next/head";
 
-const DOMAIN = "https://www.projectlandscape.ca";
+const DOMAIN = "https://www.shelterinplace3.ca";
 const DEFAULT_OG_IMAGE =
   "https://storage.googleapis.com/brandflow-bucket/personal/blog/portfolio-og.jpg";
 
 export default function Seo({
-  title = "Project Landscape Ltd. - Calgary Landscaping Company",
-  description = "Project Landscape redefines the fundamentals of landscape installation, landscape maintenance and service throughout Calgary and surrounding areas.",
-  siteName = "Project Landscape Ltd. - Calgary Landscaping Company",
+  title = "Shelter in Place",
+  description = "This site was created for the glory of god.",
+  siteName = "Shelter in Place",
   canonical = DOMAIN,
   ogImage = DEFAULT_OG_IMAGE,
   ogType = "website",
