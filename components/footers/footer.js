@@ -209,7 +209,11 @@ export default function Footer() {
           <Flex>
             <div className="spacing">
               <LogoContainer>
-                <Link className="title" href="/" style={{ marginBottom: "10px" }}>
+                <Link
+                  className="title"
+                  href="/"
+                  style={{ marginBottom: "10px" }}
+                >
                   shelter in place
                   {/* <h2 className="title">shelter in place</h2>
                   <p className="body--small">
@@ -227,14 +231,14 @@ export default function Footer() {
               <div className="spacing">
                 <h4 className="subheader">contact us</h4>
                 <ul>
-                  <li>
+                  {/* <li>
                     <ContactLink href="mailto: info@shelterinplace.ca">
                       <div>
                         <MdOutlineEmail style={IconStyle} />
                       </div>
                       info@shelterinplace.ca
                     </ContactLink>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>

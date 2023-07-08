@@ -8,7 +8,6 @@ import { MdLocationOn, MdOutlineEmail } from "react-icons/md";
 // import searchInput from "../SearchInput/searchInput";
 import SearchBox from "../SearchInput/searchInput";
 
-
 const device = {
   sm: "18em",
   md: "56em",
@@ -224,14 +223,14 @@ const Burger = styled.div`
 
     :nth-child(1) {
       transform: ${({ nav }) =>
-    nav ? "rotate(-45deg) translate(-6px, 5px)" : ""};
+        nav ? "rotate(-45deg) translate(-6px, 5px)" : ""};
     }
     :nth-child(2) {
       opacity: ${({ nav }) => (nav ? "0" : "")};
     }
     :nth-child(3) {
       transform: ${({ nav }) =>
-    nav ? "rotate(45deg) translate(-6px, -5px)" : ""};
+        nav ? "rotate(45deg) translate(-6px, -5px)" : ""};
     }
   }
 
@@ -259,14 +258,14 @@ export default function HeaderBasic() {
       <Headertop>
         <Container className="container">
           <ul>
-            <li>
+            {/* <li>
               <NavLinkTop href="mailto: info@shelterinplace.us">
                 <div>
                   <MdOutlineEmail />
                 </div>
                 info@shelterinplace.us
               </NavLinkTop>
-            </li>
+            </li> */}
             <li>
               <NavLinkTop href="" target="_blank">
                 <div>

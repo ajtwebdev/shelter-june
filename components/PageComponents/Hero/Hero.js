@@ -31,8 +31,8 @@ const Text = styled.div`
   max-width: 90ch;
   width: 100%;
 
-  p {
-    font-size: var(--fs-2);
+  div {
+    font-size: var(--fs-3);
   }
 `;
 
@@ -43,11 +43,10 @@ export default function Hero({ title, description, image }) {
         <Text className="spacing">
           <h1 className="title">{title}</h1>
           <div
-            className="bold"
             dangerouslySetInnerHTML={{
               __html: `${description}`,
             }}
-          ></div>
+          />
           <ButtonPrimary href="/contact">contact us</ButtonPrimary>
         </Text>
       </Container>
