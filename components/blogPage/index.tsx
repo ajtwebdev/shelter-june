@@ -145,15 +145,28 @@ const BlogWrapper = styled.div`
 
   div {
     figure {
-      margin-block-start: 0;
-      margin-block-end: 0;
-      margin-inline-start: 0;
-      margin-inline-end: 0;
+      // margin-block-start: 0;
+      // margin-block-end: 0;
+      // margin-inline-start: 0;
+      // margin-inline-end: 0;
     }
     img {
       width: 100%;
       margin: 0;
     }
+  }
+
+  h1 {
+    font-size: var(--fs-1);
+  }
+
+  h2 {
+    font-size: var(--fs-1);
+    margin-top: 2em;
+  }
+
+  h3 {
+    font-size: var(--fs-3);
   }
 
   h1,
@@ -165,6 +178,7 @@ const BlogWrapper = styled.div`
   }
   p {
     font-size: 1.2rem;
+    margin-top: 2em;
   }
 `
 
