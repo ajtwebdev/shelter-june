@@ -15,9 +15,9 @@ export default function BecomeChristian() {
       />
       <Banner
         img="http://www.wp-content.shelterinplace3.ca/wp-content/uploads/2023/03/IMGP2377-scaled-1.jpg"
-        title="interested in becoming a christian?"
+        title="become a christian"
         subheader="shelter in place"
-        description="Let us help you become the person you want to be."
+        description=""
       />
       <ImageRight />
       <Curse />

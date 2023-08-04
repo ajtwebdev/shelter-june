@@ -140,6 +140,7 @@ const StyledLink = styled((props) => <Link {...props} />)`
 
 const BlogWrapper = styled.div`
   max-width: 700px;
+  max=height: 400px;
   margin-left: auto;
   margin-right: auto;
 
@@ -161,7 +162,7 @@ const BlogWrapper = styled.div`
   }
 
   h2 {
-    font-size: var(--fs-1);
+    font-size: var(--fs-2);
     margin-top: 2em;
   }
 

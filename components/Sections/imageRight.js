@@ -27,7 +27,9 @@ export default function ImageRight() {
         <Flex>
           <Text className="spacing">
             <div>
-              <p className="subheader accent">ask us how</p>
+              <p className="subheader accent">
+                Please Contact Us for more Information on How to
+              </p>
               <h2 className="title">become a christian</h2>
             </div>
             <p>
