@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { Container, Actions } from "./layoutComponents";
-import { ButtonPrimary, AnchorInline } from "./buttons";
-import { getProverbData } from "../lib/api";
+import { Container } from "./layoutComponents";
 
 const Wrapper = styled.div`
   grid-row: 1 / span 2;
@@ -36,24 +34,13 @@ const Text = styled.div`
   border: 2px solid var(--clr-accent);
   border-radius: 10px;
 `;
-export default function Proverb() {
-  const [proverbData, setProverbData] = useState({});
-  useEffect(()=>{
-    async function getProverb (){
-      const data = await getProverbData();
-      setProverbData(data?.generalSettings)
-    }
-    getProverb()
-  },[])
-  
+export default function Proverb(props) {
   return (
-    <Wrapper img={proverbData?.proverbImg}>
+    <Wrapper img={props?.img}>
       <Container className="spacing">
         <Text className="spacing">
           <div className="">
-            <h3 className="subheader italics">
-              {proverbData?.proverb}
-            </h3>
+            <h3 className="subheader italics">{props?.proverb}</h3>
           </div>
         </Text>
       </Container>
