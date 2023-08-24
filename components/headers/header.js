@@ -241,7 +241,7 @@ const Burger = styled.div`
   }
 `;
 
-export default function HeaderBasic() {
+export default function HeaderBasic(props) {
   const [nav, navOpen] = useState(false);
   const [dropdown, dropdownOpen] = useState(false);
 
@@ -285,8 +285,9 @@ export default function HeaderBasic() {
             <Link className="title" href="/">
               <h2 className="title">shelter in place</h2>
               <p className="body--small">
-                The name of the Lord is strong tower and the righteous run into
-                it and safe - Proverbs 18:10
+                {/* The name of the Lord is strong tower and the righteous run into
+                it and safe - Proverbs 18:10 */}
+                {props?.proverb}
               </p>
             </Link>
           </LogoContainer>
