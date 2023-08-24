@@ -274,6 +274,11 @@ export default function HeaderBasic() {
                 Calgary, AB
               </NavLinkTop>
             </li>
+            <li>
+              <NavLinkTop href="" target="_blank">
+                shelterineplace3.ca
+              </NavLinkTop>
+            </li>
           </ul>
           <SearchBox width="30%" />
           <GetQuote href="/become-a-christian">become a christian</GetQuote>

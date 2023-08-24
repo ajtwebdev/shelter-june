@@ -149,7 +149,7 @@ export default function Curse() {
               </div>
             </Flex>
             <Left>
-              <h2 className="accent title">god's solutions for man</h2>
+              <h2 className="accent title">god's solution for man</h2>
               <p>
                 If the Lord is calling you, if you want to be saved from this
                 accursed World, you must understand that you are at enmity God,
